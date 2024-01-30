@@ -1,0 +1,26 @@
+@import './mixins/mixins.scss';
+@import './common/var.scss';
+
+
+@include b('button'){
+    display: inline;
+    white-space: nowrap;
+    cursor: pointer;
+    text-align: center;
+    border: $--border-base;
+    border-radius: $--border-radius-base;
+    padding: 8px 10px;
+    @include m(default){
+        background-color: $--button-default-background-color;
+        color: $--button-default-font-color;
+        border: $--button-default-border-color;
+    }
+
+    @include m(primary){
+        background-color: $--button-primary-background-color;
+        color: $--button-primary-font-color;
+        border: $--button-primary-border-color;
+    }
+
+
+}

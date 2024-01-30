@@ -1,0 +1,55 @@
+@import './mixins/mixins.scss';
+
+[class*="qui-col-"] {
+    float: left;
+    box-sizing: border-box;
+  }
+  .qui-col-0 {
+    display: none;
+  }
+  //循环1-24
+  @for $i from 0 through 24 {
+    .qui-col-#{$i} {
+      width: (1 / 24 * $i * 100) * 1%;
+    }
+  
+    .qui-col-offset-#{$i} {
+      margin-left: (1 / 24 * $i * 100) * 1%;
+    }
+  
+    .qui-col-pull-#{$i} {
+      position: relative;
+      right: (1 / 24 * $i * 100) * 1%;
+    }
+  
+    .qui-col-push-#{$i} {
+      position: relative;
+      left: (1 / 24 * $i * 100) * 1%;
+    }
+  }
+
+  //小
+  @include res(xs) {
+    .qui-col-xs-0 {
+      display: none;
+    }
+    @for $i from 0 through 24 {
+      .qui-col-xs-#{$i} {
+        width: (1 / 24 * $i * 100) * 1%;
+      }
+  
+      .qui-col-xs-offset-#{$i} {
+        margin-left: (1 / 24 * $i * 100) * 1%;
+      }
+  
+      .qui-col-xs-pull-#{$i} {
+        position: relative;
+        right: (1 / 24 * $i * 100) * 1%;
+      }
+  
+      .qui-col-xs-push-#{$i} {
+        position: relative;
+        left: (1 / 24 * $i * 100) * 1%;
+      }
+    }
+  }
