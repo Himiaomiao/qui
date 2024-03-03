@@ -1,4 +1,4 @@
-import { Col, Row } from 'qui';
+import { Col, Row } from 'quinn-ui';
 import React from 'react';
 
 export function Gutter() {

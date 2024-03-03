@@ -1,5 +1,59 @@
 @import './mixins/mixins.scss';
 @import './common/var.scss';
+@import './icon.scss';
+
+/*plain*/
+@mixin button-plain($color) {
+  $bg-color:mix($--color-white, $color, 90%);
+  color: $color;
+  background: mix($--color-white, $color, 90%);
+  border-color: mix($--color-white, $color, 60%);
+  &:hover{
+    color:#{$--color-white};
+    background-color:#{$color};
+    border-color:#{$color};
+  }
+  &.is-disabled {
+    cursor: not-allowed;
+    &,
+    &:hover,
+    &:focus,
+    &:active {
+      color: mix($--color-white, $color, 40%);
+      background-color: mix($--color-white, $color, 90%);
+      border-color: mix($--color-white, $color, 80%);
+    }
+  }
+}
+
+@mixin button-color($color,$bg-color,$bd-color,$hbg-color) {
+    color:#{$color};
+    background-color:#{$bg-color} ;
+    border-color:#{$bd-color} ;
+    &:hover {
+        background-color: #{$hbg-color};
+    }
+    &.is-plain {
+      @include button-plain($bg-color);
+    }
+    &.is-round{
+      border-radius:20px;
+    }
+    &.is-circle{
+      border-radius:50%;
+    }
+    &.is-icon{
+      margin-left: 5px;
+    }
+    &.is-disabled {
+      &:not(.is-plain){
+        background: mix($--color-white, $bg-color, 60%);
+        border-color:  mix($--color-white, $bg-color, 60%);
+        cursor: not-allowed;
+      }
+    
+    }
+  }
 
 
 @include b('button'){
@@ -9,18 +63,69 @@
     text-align: center;
     border: $--border-base;
     border-radius: $--border-radius-base;
-    padding: 8px 10px;
+    padding: 8px 8px;
+    & + & {
+        margin-left: 10px;
+      }
+
     @include m(default){
-        background-color: $--button-default-background-color;
-        color: $--button-default-font-color;
-        border: $--button-default-border-color;
-    }
+      background-color: $--button-default-background-color;
+      color: $--button-default-font-color;
+      border-color: $--button-default-border-color;
+      &:hover{
+        background-color: mix($--color-white,$--color-primary-light, 90%);
+        color:$--color-primary-light;
+        border-color:mix($--color-white,$--color-primary-light, 60%);
+      }
+      &.is-circle{
+        border-radius:50%;
+      }
+      &.is-round{
+        border-radius:20px;
+      }
+      &.is-disabled{
+        cursor: not-allowed;
+        color: #c0c4cc;
+        background: $--color-white;
+        border-color:  mix($--color-white,$--button-default-border-color, 60%);
+      }
 
+    }
     @include m(primary){
-        background-color: $--button-primary-background-color;
-        color: $--button-primary-font-color;
-        border: $--button-primary-border-color;
+      @include button-color($--button-primary-font-color,$--button-primary-background-color,$--button-primary-border-color,$--color-primary-light)
+      }
+    @include m(success){
+      @include button-color($--button-success-font-color,$--button-success-background-color,$--button-success-border-color,$--color-success-light)
+     }
+     @include m(info){
+      @include button-color($--button-info-font-color,$--button-info-background-color,$--button-info-border-color,$--color-info-light)
+     }
+     @include m(warning){
+      @include button-color($--button-warning-font-color,$--button-warning-background-color,$--button-warning-border-color,$--color-warning-light)
+     }
+     @include m(danger){
+      @include button-color($--button-danger-font-color,$--button-danger-background-color,$--button-danger-border-color,$--color-danger-light)
+     }
+     @include m(text){
+      border-color: transparent;
+      background-color: transparent;
+      padding-left: 0px;
+      padding-right: 0px;
+      color:mix($--color-white, $--button-primary-background-color, 10%) ;
+      cursor: pointer;
+      &:hover{
+        color:mix($--color-white, $--button-primary-background-color, 0%) ;
+      }
+      &.is-disabled{
+        &,
+    &:hover,
+    &:focus,
+    &:active {
+      cursor:not-allowed;
+      color:mix($--color-white,  $--button-default-font-color, 40%) ;
     }
-
+       
+      }
+     }
 
 }

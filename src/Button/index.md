@@ -1,9 +1,14 @@
 # Button
 
-This is an example component.
+**基础用法**
 
-```jsx
-import { Button } from 'qui';
+使用`type`、`plain`、`round`和`circle`属性来定义 Button 的样式。
+<code src="../../example/Button/baise.tsx"></code>
 
-export default () => <Button type={'primary'}>默认按钮</Button>
-```
+**禁用按钮**
+
+<code src="../../example/Button/disabled.tsx"></code>
+
+**文字按钮**
+
+<code src="../../example/Button/text.tsx"></code>

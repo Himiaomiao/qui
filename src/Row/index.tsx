@@ -1,6 +1,6 @@
 import classNames from 'classnames';
-import React, { createContext,useState } from 'react';
-import '../Theme/row.scss'
+import React, { createContext, useState } from 'react';
+import '../Theme/row.scss';
 
 interface RowProp {
   type?: string;
@@ -15,12 +15,14 @@ export const Context = createContext<RowProp>({});
 
 export function Row(props: RowProp) {
   let children = React.Children.toArray(props?.children);
-  const [classes] = useState(classNames({
-    'qui-row':true,
-    'qui-row--flex':props.type === 'flex',
-    [`is-justify-${props.justify}`]:true,
-    [`is-align-${props.align}`]:true,
-  })) 
+  const [classes] = useState(
+    classNames({
+      'qui-row': true,
+      'qui-row--flex': props.type === 'flex',
+      [`is-justify-${props.justify ? props.justify : 'start'}`]: true,
+      [`is-align-${props.align}`]: props.align ? true : false,
+    }),
+  );
 
   return (
     <Context.Provider value={props}>

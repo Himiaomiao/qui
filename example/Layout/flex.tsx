@@ -1,37 +1,9 @@
 import { Col, Row } from 'quinn-ui';
-import React from 'react';
 
-export function Layout() {
+export function Flex() {
   return (
     <>
-      <Row style={{ marginBottom: '10px' }}>
-        <Col span={24}>
-          <div style={{ backgroundColor: '#99a9bf', padding: '20px 0' }}></div>
-        </Col>
-      </Row>
-
-      <Row style={{ marginBottom: '10px' }}>
-        <Col span={12}>
-          <div style={{ backgroundColor: '#99a9bf', padding: '20px 0' }}></div>
-        </Col>
-        <Col span={12}>
-          <div style={{ backgroundColor: '#e5e9f2', padding: '20px 0' }}></div>
-        </Col>
-      </Row>
-
-      <Row style={{ marginBottom: '10px' }}>
-        <Col span={8}>
-          <div style={{ backgroundColor: '#99a9bf', padding: '20px 0' }}></div>
-        </Col>
-        <Col span={8}>
-          <div style={{ backgroundColor: '#e5e9f2', padding: '20px 0' }}></div>
-        </Col>
-        <Col span={8}>
-          <div style={{ backgroundColor: '#99a9bf', padding: '20px 0' }}></div>
-        </Col>
-      </Row>
-
-      <Row style={{ marginBottom: '10px' }}>
+      <Row style={{ marginBottom: '10px' }} type={'flex'}>
         <Col span={6}>
           <div style={{ backgroundColor: '#99a9bf', padding: '20px 0' }}></div>
         </Col>
@@ -41,33 +13,61 @@ export function Layout() {
         <Col span={6}>
           <div style={{ backgroundColor: '#99a9bf', padding: '20px 0' }}></div>
         </Col>
+      </Row>
+      <Row style={{ marginBottom: '10px' }} type={'flex'} justify={'center'}>
+        <Col span={6}>
+          <div style={{ backgroundColor: '#99a9bf', padding: '20px 0' }}></div>
+        </Col>
         <Col span={6}>
           <div style={{ backgroundColor: '#e5e9f2', padding: '20px 0' }}></div>
         </Col>
+        <Col span={6}>
+          <div style={{ backgroundColor: '#99a9bf', padding: '20px 0' }}></div>
+        </Col>
       </Row>
-
-      <Row style={{ marginBottom: '10px' }}>
-        <Col span={4}>
+      <Row style={{ marginBottom: '10px' }} type={'flex'} justify={'end'}>
+        <Col span={6}>
           <div style={{ backgroundColor: '#99a9bf', padding: '20px 0' }}></div>
         </Col>
-        <Col span={4}>
+        <Col span={6}>
           <div style={{ backgroundColor: '#e5e9f2', padding: '20px 0' }}></div>
         </Col>
-        <Col span={4}>
+        <Col span={6}>
           <div style={{ backgroundColor: '#99a9bf', padding: '20px 0' }}></div>
         </Col>
-        <Col span={4}>
-          <div style={{ backgroundColor: '#e5e9f2', padding: '20px 0' }}></div>
-        </Col>
-        <Col span={4}>
+      </Row>
+      <Row
+        style={{ marginBottom: '10px' }}
+        type={'flex'}
+        justify={'space-between'}
+      >
+        <Col span={6}>
           <div style={{ backgroundColor: '#99a9bf', padding: '20px 0' }}></div>
         </Col>
-        <Col span={4}>
+        <Col span={6}>
           <div style={{ backgroundColor: '#e5e9f2', padding: '20px 0' }}></div>
+        </Col>
+        <Col span={6}>
+          <div style={{ backgroundColor: '#99a9bf', padding: '20px 0' }}></div>
+        </Col>
+      </Row>
+      <Row
+        style={{ marginBottom: '10px' }}
+        type={'flex'}
+        justify={'space-around'}
+      >
+        <Col span={6}>
+          <div style={{ backgroundColor: '#99a9bf', padding: '20px 0' }}></div>
+        </Col>
+        <Col span={6}>
+          <div style={{ backgroundColor: '#e5e9f2', padding: '20px 0' }}></div>
+        </Col>
+        <Col span={6}>
+          <div style={{ backgroundColor: '#99a9bf', padding: '20px 0' }}></div>
         </Col>
       </Row>
     </>
   );
 }
 
-export default Layout;
+export default Flex;
