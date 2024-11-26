@@ -43,7 +43,7 @@ $--border-style-base: solid !default;
 $--border-base: $--border-width-base $--border-style-base $--border-color-base !default;
 $--border-radius-base: 4px !default;
 $--border-radius-small: 2px !default;
-$--border-radius-circle: 100% !default;
+$--border-radius-circle: 50% !default;
 $--border-radius-zero: 0 !default;
 $--border-color-lighter: #EBEEF5 !default;
 
@@ -71,3 +71,24 @@ $--button-info-background-color: $--color-info !default;
 $--button-disabled-font-color: $--color-text-placeholder !default;
 $--button-disabled-background-color: $--color-white !default;
 $--button-disabled-border-color: $--border-color-lighter !default;
+
+/*Link
+--------------*/
+$--link-font-size:$--font-size-base;
+$--link-default-font-color:$--color-text-regular;
+$--link-primary-color:$--color-primary;
+$--link-success-color:$--color-success;
+$--link-warning-color:$--color-warning;
+$--link-danger-color:$--color-danger;
+$--link-info-color:$--color-info;
+
+/*Radio
+------------------
+*/
+$--radio-input-border:$--border-base;
+$--radio-input-border-radius:$--border-radius-circle;
+$--radio-input-height: 16px !default;
+$--radio-input-width: 16px !default;
+$--radio-input-background-color:$--color-primary;
+$--radio-disabled-font-color: $--color-text-placeholder !default;
+$--radio-disabled-input-background:#f5f7fa !default

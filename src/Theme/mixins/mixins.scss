@@ -46,7 +46,6 @@ $B:$name+'-'+$block !global;
       }
     }
   }
-
   /* 响应屏幕
  -------------------------- */
 @mixin res($key, $map: $--breakpoints) {

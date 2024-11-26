@@ -1,6 +1,5 @@
 import { Button } from 'quinn-ui';
 import React from 'react';
-
 export function Basic() {
   return (
     <>

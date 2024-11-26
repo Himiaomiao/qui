@@ -1,0 +1,78 @@
+@import './mixins/mixins.scss';
+@import './common/var.scss';
+
+@include b('redio'){
+  position: relative;
+  display: inline-block;
+  white-space: nowrap;
+  outline: none;
+  cursor: pointer;
+
+  @include when('disabled'){
+      cursor: not-allowed;
+      color: $--radio-disabled-font-color;
+      .qui-radio__inner{
+        background-color:$--radio-disabled-input-background;
+        &::after{
+          background-color: $--radio-disabled-input-background;
+        }
+      }
+      &.is-checked{
+        .qui-radio__inner{
+          background-color:$--radio-disabled-input-background;
+          &::after{
+            background-color:  $--radio-disabled-font-color;
+          }
+        }
+      }
+      .qui-radio__original{
+        cursor: not-allowed;
+      }
+
+  }
+  @include when('checked'){
+    .qui-radio__inner{
+      background-color: $--color-primary ;
+    }
+  }
+}
+.qui-radio__label{
+  padding-left: 8px;
+  font-size: 14px;
+}
+.qui-radio__original{
+  opacity: 0;
+  outline: none;
+  position: absolute;
+  z-index: 2;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: 0;
+  cursor: pointer;
+}
+.qui-radio__inner{
+  width: $--radio-input-width;
+  height: $--radio-input-height;
+  background-color:  $--color-white;
+  display: inline-block;
+  border: $--radio-input-border;
+  border-radius: $--radio-input-border-radius;
+  position: relative;
+box-sizing: border-box;
+top:2px;
+  &::after{
+    width: 6px;
+    height: 6px;
+    background-color: $--color-white;
+    content: "";
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    border-radius: $--radio-input-border-radius;
+    transform: translate(-50%, -50%);
+    transition: transform .15s ease-in;
+  }
+}
+

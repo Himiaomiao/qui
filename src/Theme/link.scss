@@ -1,0 +1,108 @@
+@import './mixins/mixins.scss';
+@import './common/var.scss';
+@import './icon.scss';
+
+@include b('link'){
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  vertical-align: middle;
+  text-decoration:none;
+  padding-right: 5px;
+  font-size: $--link-font-size;
+  color:$--link-default-font-color ;
+  &:hover{
+    &:not(&.is-disabled){
+      color: $--link-primary-color;
+    }
+   
+  }
+  &:hover:after{
+    content: '';
+    width: 100%;
+      height: 1px;
+      background-color: $--link-primary-color;
+    }
+@include when('disabled'){
+  cursor: not-allowed;
+  opacity: 0.5;
+  &:hover:after{
+  display: none;
+  }
+}
+@include when('underline'){
+  &:hover:after{
+    content: '';
+    display: none;
+    }
+}
+  @include m('default'){
+    color:$--link-default-font-color ;
+    &:hover{
+      &:not(&.is-disabled){
+        text-decoration:$--link-primary-color;
+        color: $--link-primary-color;
+      }
+    }
+    &:hover:after{
+      content: '';
+        background-color: $--link-primary-color
+      }
+  }
+  @include m('primary'){
+    color:$--link-primary-color;
+    &:hover{
+      text-decoration:$--link-primary-color;
+      color:$--link-primary-color;
+    }
+    &:hover:after{
+      content: '';
+        background-color: $--link-primary-color;
+      }
+  }
+  @include m('success'){
+    color:$--link-success-color;
+    &:hover{
+      text-decoration:$--link-success-color;
+      color:$--link-success-color;
+    }
+    &:hover:after{
+      content: '';
+        background-color: $--link-success-color;
+      }
+  }
+  @include m('warning'){
+    color:$--link-warning-color;
+    &:hover{
+      text-decoration:$--link-warning-color;
+      color:$--link-warning-color;
+    }
+    &:hover:after{
+      content: '';
+        background-color: $--link-warning-color;
+      }
+  }
+  @include m('danger'){
+    color:$--link-danger-color;
+    &:hover{
+      text-decoration:$--link-danger-color;
+      color:$--link-danger-color;
+    }
+    &:hover:after{
+      content: '';
+        background-color: $--link-danger-color;
+      }
+  }
+  @include m('info'){
+    color:$--link-info-color;
+    &:hover{
+      text-decoration:$--link-info-color;
+      color:$--link-info-color;
+    }
+    &:hover:after{
+      content: '';
+        background-color: $--link-info-color;
+      }
+  }
+}
